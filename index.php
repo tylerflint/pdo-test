@@ -2,7 +2,9 @@
 <?php
 
 /*** mysql hostname ***/
-$hostname = 'localhost:/tmp/mysql/diana.sock';
+$hostname = 'localhost';
+
+$socket = '/tmp/mysql/diana.sock';
 
 /*** mysql username ***/
 $username = 'jillian';
@@ -11,7 +13,7 @@ $username = 'jillian';
 $password = 'GQJEy0ir';
 
 try {
-    $dbh = new PDO("mysql:host=$hostname;dbname=mysql", $username, $password);
+    $dbh = new PDO("mysql:host=$hostname;dbname=mysql;unix_socket=$socket", $username, $password);
     /*** echo a message saying we have connected ***/
     echo 'Connected to database';
     }
