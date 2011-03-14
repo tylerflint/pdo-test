@@ -1,0 +1,2 @@
+php:
+    extensions: [mysqli, pdo, pdo_mysql]
